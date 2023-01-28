@@ -7,15 +7,15 @@ def create_connection(db_name):
     try:
         conn = sqlite3.connect(db_name)
         return conn
-    except sqlite3.Error as e:
-        print(e)
+    except sqlite3.Error as error:
+        print(error)
 
 def create_table(conn, sql):
     try:
         cursor = conn.cursor()
         cursor.execute(sql)
-    except sqlite3.Error as e:
-        print(e)
+    except sqlite3.Error as error:
+        print(error)
 
 def create_product(conn, product: tuple):
     try:
@@ -25,8 +25,8 @@ def create_product(conn, product: tuple):
         cursor = conn.cursor()
         cursor.execute(sql, product)
         conn.commit()
-    except sqlite3.Error as e:
-        print(e)
+    except sqlite3.Error as error:
+        print(error)
 
 def update_quantity(conn, product: tuple):
     try:
@@ -35,8 +35,8 @@ def update_quantity(conn, product: tuple):
         cursor = conn.cursor()
         cursor.execute(sql, product)
         conn.commit()
-    except sqlite3.Error as e:
-        print(e)
+    except sqlite3.Error as error:
+        print(error)
 
 def update_price(conn, product: tuple):
     try:
@@ -45,8 +45,8 @@ def update_price(conn, product: tuple):
         cursor = conn.cursor()
         cursor.execute(sql, product)
         conn.commit()
-    except sqlite3.Error as e:
-        print(e)
+    except sqlite3.Error as error:
+        print(error)
 
 def delete_product(conn, id):
     try:
@@ -55,8 +55,8 @@ def delete_product(conn, id):
         cursor = conn.cursor()
         cursor.execute(sql, (id,))
         conn.commit()
-    except sqlite3.Error as e:
-        print(e)
+    except sqlite3.Error as error:
+        print(error)
 
 def select_all_products(conn):
     try:
@@ -68,8 +68,8 @@ def select_all_products(conn):
 
         for row in rows:
             print(row)
-    except sqlite3.Error as e:
-        print(e)
+    except sqlite3.Error as error:
+        print(error)
 
 def select_by_price_and_quantity(conn, limit):
     try:
@@ -81,8 +81,8 @@ def select_by_price_and_quantity(conn, limit):
 
         for row in rows:
             print(row)
-    except sqlite3.Error as e:
-        print(e)
+    except sqlite3.Error as error:
+        print(error)
 
 def search_by_word(conn, word):
     try:
@@ -94,8 +94,8 @@ def search_by_word(conn, word):
 
         for row in rows:
             print(row)
-    except sqlite3.Error as e:
-        print(e)
+    except sqlite3.Error as error:
+        print(error)
 
 
 database = r'hw.db'
