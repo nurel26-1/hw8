@@ -131,6 +131,6 @@ update_price(connection, (33.33, 12))
 delete_product(connection, 2)
 select_all_products(connection)
 select_by_price_and_quantity(connection, (100, 5))
-search_by_word(connection, 'Вода')
+search_by_word(connection, 'Мыло')
 
 connection.close()
